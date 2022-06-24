@@ -37,25 +37,30 @@ void display(struct Node *ptr){
     }while(p!=ptr);
     printf("\n\n");
 }
-void delete(struct Node **ptr, char key[]){
-    struct Node *p = *ptr, *q;
-    while(strcmp(key, p->next->data) && p!=(*ptr)){
-        p = p->next;
+void sorting(struct Node *ptr){
+    struct Node *q = ptr, *min;
+    int flag1=0;
+    while(q!=ptr || !flag1){
+        int flag2=0;
+        flag1 = 1;
+        min = q;
+        struct Node *temp = q;
+        while(temp!=ptr || !flag2){
+            flag2 = 1;
+            if(strcmp(temp->data, min->data) < 0)
+                min = temp;
+            temp = temp->next;
+        }
+        char x[10];
+        strcpy(x, min->data);
+        strcpy(min->data, q->data);
+        strcpy(q->data, x);
+        q = q->next;
     }
-    if(p->next == (*ptr)){
-        p->next = (*ptr)->next;
-        q = *ptr;
-        (*ptr) = p->next;
-    }
-    else{
-        q = p->next;
-        p->next = q->next;
-    }
-    free(q);
 }
 void main(){
     struct Node *first = create();
     display(first);
-    delete(&first, "xyz");
+    sorting(first);
     display(first);
 }

@@ -31,35 +31,25 @@ struct Node *create(){
 void display(struct Node *ptr){
     struct Node *p = ptr;
     printf("Linked List: ");
-    do{
-        printf("%s ", p->data);
-        p = p->next;
-    }while(p!=ptr);
+    if(ptr!=0){
+        do{
+            printf("%s ", p->data);
+            p = p->next;
+        }while(p!=ptr);
+    }
     printf("\n\n");
 }
-void delete(struct Node **ptr, char key[]){
-    struct Node *p = *ptr;
-    if(!strcmp((*ptr)->data, key)){
-        while(p->next!=(*ptr))
-            p = p->next;
-        p->next = (*ptr)->next;
-        p = *ptr;
-        *ptr = (*ptr)->next;
-        p->next = NULL;
+void deleteall(struct Node *ptr){
+    while(ptr->next != ptr){
+        struct Node *p = ptr->next;
+        ptr->next = p->next;
         free(p);
     }
-    else{
-        while(p!=(*ptr) && strcmp(p->next->data, key))
-            p = p->next;
-        struct Node *q = p->next;
-        p->next = q->next;
-        q->next = NULL;
-        free(q);
-    }
+    free(ptr);
 }
 void main(){
     struct Node *first = create();
     display(first);
-    delete(&first, "xyz");
+    deleteall(first);
     display(first);
 }

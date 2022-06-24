@@ -35,27 +35,9 @@ void display(struct Node *ptr){
         printf("%s ", p->data);
         p = p->next;
     }while(p!=ptr);
-    printf("\n\n");
-}
-void delete(struct Node **ptr, char key[]){
-    struct Node *p = *ptr, *q;
-    while(strcmp(key, p->next->data) && p!=(*ptr)){
-        p = p->next;
-    }
-    if(p->next == (*ptr)){
-        p->next = (*ptr)->next;
-        q = *ptr;
-        (*ptr) = p->next;
-    }
-    else{
-        q = p->next;
-        p->next = q->next;
-    }
-    free(q);
+    printf("\n");
 }
 void main(){
     struct Node *first = create();
-    display(first);
-    delete(&first, "xyz");
     display(first);
 }
