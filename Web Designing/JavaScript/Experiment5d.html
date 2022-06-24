@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic</title>
+    <style>
+        div{
+            background-color: rgb(212, 212, 212);
+            margin: 2%;
+            text-align: center;
+            padding: 3%;
+        }
+    </style>
+</head>
+<body>
+    <div onmouseenter="bo()">
+        <span id="bold">This text should be bold</span>
+    </div>
+    <div onmouseover="it()">
+        <span id="italic">This text should be italic</span>
+    </div>
+    <div onmouseenter="un()">
+        <span id="underline">This text should be underlined</span>
+    </div>
+
+
+    <script>
+        let b = document.getElementById("bold");
+        let i = document.getElementById("italic");
+        let u = document.getElementById("underline");
+        function bo(){
+            if(b.style.fontWeight == "normal")
+                b.style.fontWeight = "bold";
+            else
+                b.style.fontWeight = "normal";
+        }
+        function it(){
+            if(i.style.fontStyle == "normal")
+                i.style.fontStyle = "italic";
+            else
+                i.style.fontStyle = "normal";
+        }
+        function un(){
+            if(u.style.textDecoration == "none")
+                u.style.textDecoration = "underline";
+            else
+                u.style.textDecoration = "none";
+        }
+    </script>
+</body>
+</html>

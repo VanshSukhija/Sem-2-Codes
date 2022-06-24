@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        let a, b, c;
+
+        function values(){
+            a = parseInt(prompt("Enter A: "));
+            b = parseInt(prompt("Enter B: "));
+            c = parseInt(prompt("Enter C: "));
+        }
+        function add(){
+            document.getElementById("para").innerHTML=a+b
+        }
+        function sub(){
+            document.getElementById("para").innerHTML=a-b
+        }
+        function mul(){
+            document.getElementById("para").innerHTML=a*b
+        }
+        function divi(){
+            document.getElementById("para").innerHTML=a/b
+        }
+        function sq(){
+            document.getElementById("para").innerHTML=c*c
+        }
+        function cube(){
+            document.getElementById("para").innerHTML=c*c*c
+        }
+        function style(){
+            document.getElementById("para").style.fontSize = "50px";
+            document.getElementById("para").style.content = "Hallah Wabibi";
+        }
+    </script>
+
+    <p id="para">Wallah Habibi</p>
+    
+    <button onclick="style()">Change Style</button><br>
+    <button onclick="values()">Enter Values</button><br>
+    <button onclick="add()">Add</button><br>
+    <button onclick="sub()">Subtract</button><br>
+    <button onclick="mul()">Multiply</button><br>
+    <button onclick="divi()">Divide</button><br>
+    <button onclick="sq()">Square</button><br>
+    <button onclick="cube()">Cube</button><br><br>
+    
+
+    <form name="cal">
+        <input type="text" id="screen" name="screen"><br><br>
+
+        <input type="button" id="7" value="7" onclick="cal.screen.value += '7'">
+        <input type="button" id="8" value="8" onclick="cal.screen.value += '8'">
+        <input type="button" id="9" value="9" onclick="cal.screen.value += '9'">
+        <input type="button" id="+" value="+" onclick="cal.screen.value += '+'"><br><br>
+        
+        <input type="button" id="4" value="4" onclick="cal.screen.value += '4'">
+        <input type="button" id="5" value="5" onclick="cal.screen.value += '5'">
+        <input type="button" id="6" value="6" onclick="cal.screen.value += '6'">
+        <input type="button" id="-" value="-" onclick="cal.screen.value += '-'"><br><br>
+
+        <input type="button" id="1" value="1" onclick="cal.screen.value += '1'">
+        <input type="button" id="2" value="2" onclick="cal.screen.value += '2'">
+        <input type="button" id="3" value="3" onclick="cal.screen.value += '3'">
+        <input type="button" id="*" value="*" onclick="cal.screen.value += '*'"><br><br>
+
+        <input type="button" id="/" value="/" onclick="cal.screen.value += '/'">
+        <input type="button" id="0" value="0" onclick="cal.screen.value += '0'">
+        <input type="button" id="." value="." onclick="cal.screen.value += '.'">
+        <input type="button" id="=" value="=" onclick="cal.screen.value = eval(cal.screen.value)"><br><br>
+
+        <input type = "button" value = "Clear All" onclick = "cal.screen.value = ' ' " id= "clear" ><br>
+    </form>
+
+
+</body>
+</html>

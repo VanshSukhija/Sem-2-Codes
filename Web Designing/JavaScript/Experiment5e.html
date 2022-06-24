@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Div</title>
+    <style>
+        table{
+            width: 90%;
+            text-align: center;
+            font-size: 25px;
+            margin-left: 6%;
+            margin-top: 2%;
+        }
+        #photodiv{
+            margin-top: 2%;
+            margin-left: 20%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><div id="dhoni" onclick="dh()">MS Dhoni</div></td>
+            <td><div id="kohli" onclick="ko()">Virat Kohli</div></td>
+            <td><div id="rohit" onclick="rs()">Rohit Sharma</div></td>
+        </tr>
+    </table>
+    <div id="photodiv"></div>
+    <script>
+        let d = document.getElementById("dhoni");
+        let k = document.getElementById("kohli");
+        let r = document.getElementById("rohit");
+        function dh(){
+            document.getElementById("photodiv").innerHTML = '<img src="msdhoni.png" alt="msd">';
+            d.style.color = "red";
+            k.style.color = "black";
+            r.style.color = "black";
+        }
+        function ko(){
+            document.getElementById("photodiv").innerHTML = '<img src="viratkohli.png" alt="vk">';
+            k.style.color = "red";
+            d.style.color = "black";
+            r.style.color = "black";
+        }
+        function rs(){
+            document.getElementById("photodiv").innerHTML = '<img src="rohitsharma.png" alt="hitman">';
+            r.style.color = "red";
+            d.style.color = "black";
+            k.style.color = "black";
+        }
+    </script>
+</body>
+</html>

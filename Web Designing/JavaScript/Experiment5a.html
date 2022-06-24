@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 3</title>
+    <style>
+        .singer{
+            text-align: left;
+        }
+        .header{
+            background-color: #e8c0ec;
+        }
+        .fs1{
+            background-color: rgb(255, 255, 255);
+            font-size: 25px;
+            color: black;
+            margin-bottom: 2%;
+            width: 60%;
+            margin-left: 20%;
+            border-style: solid;
+            border-radius: 9px;
+        }
+        .fs2{
+            margin-top: 2%;
+            background-color: rgb(255, 255, 255);
+            font-size: 25px;
+            color: black;
+            width: 60%;
+            margin-left: 20%;
+            border-style: solid;
+            border-radius: 9px;
+        }
+        .favsubject, .favmovie, .favsinger{
+            margin: 2%;
+        }
+        .favs{
+            margin-bottom: 2%;
+        }
+        input{
+            height: 30px;
+        }
+        select{
+            height: 30px;
+        }
+        sup{
+            font-size: small;
+            color: red;
+        }
+    </style>
+    <script>
+        function validateform(){
+            let x = document.forms["form1"]["name"].value;
+            let y = document.forms["form1"]["age"].value;
+            let z = document.forms["form1"]["address"].value;
+            if(x.length < 3){
+                alert("Length of name is should be greater than or equal to 3 characters");
+                return false;
+            }
+            if(y<0 || y>150){
+                alert("Age should be in range of 0 to 150");
+                return false;
+            }
+            if(z.contains(',')){
+                alert("Your address does not contain commas (,)");
+                return false;
+            }
+            if(z.length < 3){
+                alert("Length of your address is very small");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body class="header">
+    <h1 style="color: black; text-align: center;">PERSONAL INFORMATION FORM</h1>
+    <form name="form1" onsubmit="return validateform()">
+        <div class="fs1">
+            <fieldset>
+                <legend style="color: black;">Personal Data</legend>
+                <label for="name"><b>Name</b> <sup>*required</sup></label><br>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+                
+                <label for="age"><b>Age</b> <sup>*required</sup></label><br>
+                <input type="number" id="age" name="age" placeholder="Enter your age" required><br><br>
+                
+                <label for="address"><b>Address</b> <sup>*required</sup></label><br>
+                <input type="text" id="address" name="address" placeholder="Enter your address" required><br><br>
+            </fieldset>
+        </div>
+        <div class="fs2">
+            <fieldset>
+                <legend style="color: black;">Preferences</legend>
+
+                <div class="favsubject">
+                    <label class="favs"><b>Favorite Subject</b></label><br>
+                    <input type="radio" id="dc1" name="favsubject">
+                    <label style="font-size: 20px;" for="dc1">DC-1</label><br>
+                    <input type="radio" id="dc2" name="favsubject">
+                    <label style="font-size: 20px;" for="dc3">DC-2</label><br>
+                    <input type="radio" id="dc3" name="favsubject">
+                    <label style="font-size: 20px;" for="dc3">DC-3</label><br>
+                    <input type="radio" id="webd" name="favsubject">
+                    <label style="font-size: 20px;" for="webd">Web-D</label><br>
+                    <input type="radio" id="maths" name="favsubject">
+                    <label style="font-size: 20px;" for="maths">Maths</label><br>
+                    <input type="radio" id="phy" name="favsubject">
+                    <label style="font-size: 20px;" for="phy">Physics</label><br>
+                    <input type="radio" id="chem" name="favsubject">
+                    <label style="font-size: 20px;" for="chem">Chemistry</label><br>
+                    <input type="radio" id="eco" name="favsubject">
+                    <label style="font-size: 20px;" for="eco">Economics</label><br><br>
+                </div>
+                
+                <div class="favmovie">
+                    <label class="favs"><b>Favorite Movie Genre</b></label><br>
+                    <select name="movie" id="movie">
+                        <option value="none">Select Genre</option>
+                        <option value="comedy">Comedy</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Action">Action</option>
+                        <option value="Documentary">Documentary</option>
+                        <option value="Animation">Animation</option>
+                    </select><br><br>
+                </div>
+                
+                <div class="favsinger">
+                    <label for="movie" class="favs"><b>Favorite Singer</b></label><br>
+                    <input type="checkbox" id="TonyKakkar" name="singer" class="singer">
+                    <label style="font-size: 20px;" for="TonyKakkar">Tony Kakkar</label><br>
+                    <input type="checkbox" id="NehaKakkar" name="singer" class="singer">
+                    <label style="font-size: 20px;" for="NehaKakkar">Neha Kakkar</label><br>
+                    <input type="checkbox" id="SidhuMoosewala" name="singer" class="singer">
+                    <label style="font-size: 20px;" for="SidhuMoosewala">Late Sidhu Moosewala</label><br>
+                    <input type="checkbox" id="DhinchakPooja" name="singer" class="singer">
+                    <label style="font-size: 20px;" for="DhinchakPooja">Dhinchak Pooja</label><br><br>
+                </div>
+                
+            </fieldset>
+        </div>
+        <input type="submit" value="Submit" style="width: 100px; font-size: larger; border-style: solid; border-radius: 9px; margin: 2% 1% 5% 42%;">
+        <input type="reset" value="Reset" style="width: 100px; margin-top: 2%; font-size: larger; margin-left: 1%; border-style: solid; border-radius: 9px;">
+    </form>
+</body>
+</html>
