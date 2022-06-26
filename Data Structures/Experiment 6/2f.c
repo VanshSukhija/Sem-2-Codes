@@ -54,6 +54,7 @@ void deleteall(struct Student **ptr){
         (*ptr)->prev = NULL;
         free(p);
     }
+    *ptr = NULL;
     free((*ptr));
 }
 void main(){
