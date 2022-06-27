@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<title>Online HTML Editor</title>
+
+<head>
+    <style>
+        .hello {
+            text-align: center;
+            background-color: black;
+            color: aqua;
+
+        }
+
+        .subhello1 {
+            text-align: center;
+            height: 100px;
+            width: 200px
+        }
+
+        .subhello2 {
+            text-align: center;
+            height: 100px;
+            width: 200px
+        }
+
+        .subhello3 {
+            text-align: center;
+            height: 100px;
+            width: 200px
+        }
+
+        .subhello4 {
+            text-align: center;
+            height: 100px;
+            width: 200px
+        }
+
+        .subhello5 {
+            text-align: center;
+            height: 100px;
+            width: 200px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hello">
+        <button id="btn1" onclick="fun1()" class="subhello1">Addition</button><br>
+        <hr>
+        <button id="btn2" onclick="fun2()" class="subhello2">Subtraction</button><br>
+        <hr>
+        <button id="btn3" onclick="fun3()" class="subhello3">Multiplication</button><br>
+        <hr>
+        <button id="btn4" onclick="fun4()" class="subhello4">Division</button><br>
+        <hr>
+        <button id="btn5" onclick="fun5(3.3,4.5)" class="subhello4">Addition of two float numbers</button><br>
+        <hr>
+        <button id="btn5" onclick="fun5(3,4)" class="subhello5">Addition of two integer numbers</button><br>
+        <hr>
+    </div>
+    <script>
+        function fun1() {
+            var a = parseInt(prompt("Enter 1st value: "));
+            var b = parseInt(prompt("Enter 2nd value: "));
+            document.getElementById("btn1").innerHTML = a + b;
+
+        }
+        function fun2() {
+            var a = parseInt(prompt("Enter 1st value: "));
+            var b = parseInt(prompt("Enter 2nd value: "));
+            document.getElementById("btn2").innerHTML = a - b;
+
+        }
+        function fun3() {
+            var a = parseInt(prompt("Enter 1st value: "));
+            var b = parseInt(prompt("Enter 2nd value: "));
+            document.getElementById("btn3").innerHTML = a * b;
+
+        }
+        function fun4() {
+            var a = parseInt(prompt("Enter 1st value: "));
+            var b = parseInt(prompt("Enter 2nd value: "));
+            document.getElementById("btn4").innerHTML = a / b;
+
+        }
+        function fun5(a, b) {
+            document.getElementById("btn5").innerHTML = a + b;
+            alert("Addition of float numbers are: " + (a + b));
+        }
+    </script>
+</body>
+
+</html>

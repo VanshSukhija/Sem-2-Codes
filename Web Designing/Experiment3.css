@@ -1,0 +1,39 @@
+.singer{
+    text-align: left;
+}
+.header{
+    background-color: #e8c0ec;
+    /* text-align: center; */
+}
+.fs1{
+    background-color: rgb(255, 255, 255);
+    font-size: 25px;
+    color: black;
+    margin-bottom: 2%;
+    width: 60%;
+    margin-left: 20%;
+    border-style: solid;
+    border-radius: 9px;
+}
+.fs2{
+    margin-top: 2%;
+    background-color: rgb(255, 255, 255);
+    font-size: 25px;
+    color: black;
+    width: 60%;
+    margin-left: 20%;
+    border-style: solid;
+    border-radius: 9px;
+}
+.favsubject, .favmovie, .favsinger{
+    margin: 2%;
+}
+.favs{
+    margin-bottom: 2%;
+}
+input{
+    height: 30px;
+}
+select{
+    height: 30px;
+}

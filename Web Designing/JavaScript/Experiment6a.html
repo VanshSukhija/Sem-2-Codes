@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 6(a) & (b)</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        h1{
+            text-align: center;
+            color: brown;
+        }
+        p{
+            font-size: large;
+            text-align: center;
+        }
+        button{
+            margin-left: 45%;
+            width: 150px;
+            height: 30px;
+            background-color: rgb(211, 222, 244);
+        }
+    </style>
+</head>
+<body>
+    <h1>Experiment 6(a) & (b)</h1>
+    <p>Number 1: <span id="num1"></span><br><br></p>
+    <p>Number 2: <span id="num2"></span><br><br></p>
+    <button onclick="func1()">Calculate</button><br><br>
+    <p>Quotient: <span id="quo"></span><br></p>
+    <p>Remainder: <span id="rem"></span></p>
+
+    <hr>
+
+    <button onclick="spaces()">Add Spaces</button><br>
+    <div id="num3" style="margin-left: 45%;"></div>
+    <script>
+        let a = parseInt(prompt("Enter number 1: "));
+        let b = parseInt(prompt("Enter number 2: "));
+        document.getElementById("num1").innerHTML = a;
+        document.getElementById("num2").innerHTML = b;
+        function func1(){
+            document.getElementById("quo").innerHTML = a/b - (a%b)/b;
+            document.getElementById("rem").innerHTML = a%b;
+        }
+        function spaces(){
+            let x = parseInt(prompt("Enter a number: "));
+            let str = String(x);
+            for(let i=0; i<str.length; i++){
+                document.getElementById("num3").innerHTML += str[i] + ' ';
+            }
+        }
+    </script>
+</body>
+</html>

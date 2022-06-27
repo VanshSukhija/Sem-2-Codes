@@ -1,0 +1,55 @@
+<!-- Create a college registration form to obtain a users first name, last name, mobile number, email address, submit and cancel button. Now validate the mobile number and email using java 
+script. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body style="font-style:italic ; color: #ff4d4d;">
+    <p style="font-size:100px; text-align:center; color :red;background-color: #c5d5c5;">
+        College Registration form </p>
+    <fieldset>
+        <legend style="color: #c83349; font-size: x-large;">Personal-Info</legend>
+        <form style="font-size:xx-large ; background-color: #bfff00;" name="Mform" onsubmit="return validationform()">
+            <center><label for="fname">First Name</label><br>
+                <input type="text" name="fname" id="fname"><br>
+                <label for="lname">Last Name:</label><br>
+                <input type="text" name="lname" id="lname"><br>
+                <label for="Mobile_Number">Mobile_Number</label><br>
+                <input type="text" name="Mobile_Number" id="Mobile_Number"><br>
+                <label for="Email_Address">Email_Address:</label><br>
+                <input type="text" name="Email_Address" id="Email_Address"><br>
+                <input type="submit" value="Submit" onclick="return validate()">
+            </center>
+            <script>
+                function validationform() {
+                    const fname = document.Mform.fname.value;
+                    const lname = document.Mform.lname.value;
+                    const Mobile_Number = document.Mform.Mobile_Number.value;
+                    const Email_Address = document.Mform.Email_Address.value;
+                    if (fname == null || fname == "") {
+                        alert("First Name can't be blank");
+                        return false;
+                    } else if (lname == null || lname == "") {
+                        alert("Last Name can't be blank");
+                        return false;
+                    } else if (Mobile_Number == null || Mobile_Number == "") {
+                        alert("Mobile Number can't be blank");
+                        return false;
+                    } else if (Email_Address == null || Email_Address == "") {
+                        alert("Email_Address can't be blank");
+                        return false;
+                    }
+
+                }
+            </script>
+        </form>
+    </fieldset>
+</body>
+
+</html>
