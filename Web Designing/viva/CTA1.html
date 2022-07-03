@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        h1{
+            text-align: center;
+            color: crimson;
+            font-size: 65px;
+        }
+        body{
+            background-color: azure;
+        }
+        #name, #pass, #mail, #pass2, #num{
+            width: 200px;
+            height: 30px;
+            margin-left: 35%;
+        }
+        label{
+            font-size: larger;
+            margin-left: 35%;
+            margin-bottom: 2%;
+        }
+        form{
+            width: 50%;
+            border: 2px;
+            border-style: solid;
+            margin-left: 25%;
+            background-color: blanchedalmond;
+        }
+        #sub, #res{
+            width: 100px;
+            height: 40px;
+            margin-top: 3%;
+            background-color: rgb(184, 201, 233);
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form name="form1">
+        <label for="name">Name: </label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+        <label for="mail">Email: </label><br>
+        <input type="text" id="mail" name="mail" placeholder="Enter your email id"><br><br>
+        <label for="pass">Password: </label><br>
+        <input type="password" id="pass" name="pass" placeholder="Enter your password"><br><br>
+        <label for="pass2">Confirm Password: </label><br>
+        <input type="password" id="pass2" name="pass2" placeholder="Enter your password again"><br><br>
+        <label for="num">Phone: </label><br>
+        <input type="number" id="num" name="num" placeholder="Enter your phone number"><br><br>
+    </form>
+    <input type="submit" value="Submit" id="sub" onclick="return validate()" style="margin-left: 42%;"> 
+    <input type="reset" value="Reset" id="res"> 
+    <script>
+        let a = document.forms["form1"]["name"];
+        let b = document.forms["form1"]["mail"];
+        let c = document.forms["form1"]["pass"];
+        let d = document.forms["form1"]["pass2"];
+        let e = document.forms["form1"]["num"];
+        let str = (String)(c.value);
+        let str2 = (String)(e.value);
+        let flag = 1;
+        function validate(){
+            if(a.value==''){
+                flag = 0;
+                alert("Name can't be empty");
+            }
+            if(!b.value.includes("@")){
+                flag = 0;
+                alert("Format of your email in incorrect");
+            }
+            if(str.length<10){
+                flag = 0;
+                alert("Length of password is less than 10");
+            }
+            if(c.value!=d.value){
+                flag = 0;
+                alert("Your passwords doesn't match");
+            }
+            if(str2.length<10){
+                flag = 0;
+                alert("Length of your phone number is not 10 characters");
+            }
+            return flag;
+        }
+    </script>
+</body>
+</html>

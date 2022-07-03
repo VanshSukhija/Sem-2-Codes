@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toss coin</title>
+    <style>
+        .border {
+            border-radius: 5px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: black;
+            background-color: aquamarine;
+        }
+
+        .border2 {
+            border-width: 4px;
+            border-style: solid;
+            border-color: black;
+            display: inline-block;
+            margin-left: auto;
+            padding: 20px;
+            background-color: rgb(181, 250, 227);
+        }
+
+        .big {
+            font-size: larger;
+        }
+
+        td {
+            padding: 20px;
+            background-color: rgba(0, 238, 255, 0.762);
+            opacity: 75%;
+        }
+
+        th {
+            padding: 20px;
+            background-color: rgba(0, 238, 255, 0.762);
+        }
+
+        .inline {
+            margin: 2%;
+            font-size: 50px;
+            display: inline;
+            background-color: yellow;
+        }
+        img{
+            width: 270px;
+        }
+    </style>
+</head>
+
+<body style="background-color: orange;">
+    <div class="border">
+        <center>
+            <h1 class="border2">Program to Toss a coin and count its frequency</h1>
+        </center>
+        <br>
+        <center>
+            <div class="inline" id="head">
+                <span>HEAD</span>
+            </div>
+            <div class="inline" id="tail">
+                <span>TAILS</span>
+            </div>
+            <br>
+            <br><br>
+            <button class="big" onclick="toss()">Toss Coin</button>
+            <br>
+            <br>
+        </center>
+    </div>
+    <center>
+        <table style="font-size: 40px; text-align: center; table-layout: fixed; width: 750px;">
+            <tbody>
+                <tr>
+                    <th>Face</th>
+                    <th>Frequency</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>Head</td>
+                    <td id="hf">0</td>
+                    <td id="hp">0</td>
+                </tr>
+                <tr>
+                    <td>Tail</td>
+                    <td id="tf">0</td>
+                    <td id="tp">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+    <script>
+        var y = 0, z = 0;
+        function toss() {
+            let x = Math.floor(Math.random() * 100 + 1);
+
+            if (x % 2 == 0) {
+                document.getElementById("hf").innerHTML++;
+                y++;
+                let one = 100 * y / (y + z);
+                let two = 100 * z / (y + z);
+                document.getElementById("head").style.backgroundColor = "green";
+                document.getElementById("tail").style.backgroundColor = "yellow";
+                document.getElementById("hp").innerHTML = one.toFixed(2);
+                document.getElementById("tp").innerHTML = two.toFixed(2);
+            }
+            else {
+                document.getElementById("tf").innerHTML++;
+                z++;
+                let one = 100 * y / (y + z);
+                let two = 100 * z / (y + z);
+                document.getElementById("tail").style.backgroundColor = "green";
+                document.getElementById("head").style.backgroundColor = "yellow";
+                document.getElementById("hp").innerHTML = one.toFixed(2);
+                document.getElementById("tp").innerHTML = two.toFixed(2);
+            }
+        }
+    </script>
+
+</body>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="string1">String you entered: </p>
+    </div>
+    <div id="show">New String: </div>
+    <script>
+        let str1 = prompt("Enter a string: ");
+        let len = str1.length;
+        let str2 = str1[len-3]+str1[len-2]+str1[len-1]+str1+str1[len-3]+str1[len-2]+str1[len-1];
+        let a = document.getElementById("string1");
+        let b = document.getElementById("show");
+        a.innerHTML += str1;
+        b.innerHTML += str2;
+    </script>
+</body>
+</html>
